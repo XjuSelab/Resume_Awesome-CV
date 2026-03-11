@@ -2,7 +2,6 @@
 
 ![XeLaTeX](https://img.shields.io/badge/XeLaTeX-008080?style=for-the-badge&logo=latex&logoColor=white)
 ![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&logo=overleaf&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 ![Chinese Resume](https://img.shields.io/badge/Chinese-Resume%20Template-C62828?style=for-the-badge)
 
 这是一个基于 Awesome-CV 整理的中文简历模板，推荐使用方式是：
