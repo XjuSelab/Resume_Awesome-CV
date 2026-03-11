@@ -18,7 +18,7 @@
 
 ## 2. 注册 Overleaf 账号
 
-如果你还没有 Overleaf 账号，先注册一个。
+如果你还没有 Overleaf 账号，先注册一个：<https://cn.overleaf.com/project>
 
 ![Overleaf Homepage](docs/overleaf_homepage.png)
 
