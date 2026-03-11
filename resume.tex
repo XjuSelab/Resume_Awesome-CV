@@ -4,14 +4,14 @@
 %-------------------------------------------------------------------------------
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
-\documentclass[12pt, a4paper]{awesome-cv}
+\documentclass[12pt, a4paper]{styles/awesome-cv}
 
 % --- [中文支持配置 START] ---
 \usepackage{xeCJK}
 
 % 1. 正文主字体 (对应 AdobeSongStd-Light.otf)
 \setCJKmainfont[
-    Path = fonts/zh_CN-Adobe/,
+    Path = styles/fonts/zh_CN-Adobe/,
     Extension = .otf,
     AutoFakeBold = true,
     AutoFakeSlant = true
@@ -19,7 +19,7 @@
 
 % 2. 标题/无衬线字体 (对应 AdobeHeitiStd-Regular.otf)
 \setCJKsansfont[
-    Path = fonts/zh_CN-Adobe/,
+    Path = styles/fonts/zh_CN-Adobe/,
     Extension = .otf,
     AutoFakeBold = true,
     AutoFakeSlant = true
@@ -27,7 +27,7 @@
 
 % 3. 等宽/代码字体 (对应 AdobeHeitiStd-Regular.otf)
 \setCJKmonofont[
-    Path = fonts/zh_CN-Adobe/,
+    Path = styles/fonts/zh_CN-Adobe/,
     Extension = .otf,
     AutoFakeBold = true,
     AutoFakeSlant = true
@@ -35,7 +35,7 @@
 
 % (可选) 定义楷体供特殊使用，如 \kai{这段字是楷体}
 \setCJKfamilyfont{kai}[
-    Path = fonts/zh_CN-Adobe/,
+    Path = styles/fonts/zh_CN-Adobe/,
     Extension = .otf,
     AutoFakeBold = true
 ]{AdobeKaitiStd-Regular}
@@ -50,7 +50,7 @@
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 % 指定英文字体路径
-\fontdir[fonts/]
+\fontdir[styles/fonts/]
 
 % 强调色设置
 \colorlet{awesome}{awesome-red}
@@ -59,7 +59,7 @@
 %	个人信息（模板占位）
 %-------------------------------------------------------------------------------
 % 头像文件（模板图）
-\photo[rectangle,edge,left]{profile.png}
+\photo[rectangle,edge,left]{assets/profile.png}
 
 \name{}{姓名}
 \position{xxx协会会长·xx委员}
@@ -174,136 +174,10 @@
 %-------------------------------------------------------------------------------
 %	简历内容
 %-------------------------------------------------------------------------------
-\vspace{-8mm}
-% --- [教育经历] ---
-\cvsection{\textcolor{awesome}{教育}经历}
-\vspace{-3mm}
-\begin{cventries}
-  \cventry
-    {计算机科学与技术 / 本科大二} % 学位/年级
-    {新疆大学} % 学校
-    {新疆, 乌鲁木齐} % 地点
-    {入学时间 - 毕业时间} % 时间
-    {
-      \vspace{-4mm}
-      \begin{cvitems}
-        \item {核心成绩：\textbf{GPA排名1/118}} %
-        \item {英语能力：四级xxx / 六级xxx} %
-        \item {补充说明：科研方向 / 软件设计师 / 主修方向} %
-      \end{cvitems}
-    }
-\end{cventries}
-
-\vspace{-2mm}
-% --- [专业技能] ---
-\cvsection{\textcolor{awesome}{专业}技能}
-\begin{cvskills}
-  \cvskill
-    {技能分类一} % Category
-    {技能项1, 技能项2, 技能项3} 
-
-  \cvskill
-    {技能分类二} % Category
-    {工具或平台1, 工具或平台2, 工具或平台3}
-
-  \cvskill
-    {技能分类三} % Category
-    {你的补充描述，例如研究兴趣、软技能或行业经验} 
-\end{cvskills}
-
-% --- [项目与实践经历] ---
-\cvsection{\textcolor{awesome}{项目}与实践经历}
-\vspace{-3mm}
-\begin{cventries}
-
-  \cventry
-    {你的主要作用或角色} % Role
-    {项目名称一} % Project Name
-    {项目简介或技术关键词} % Location
-    {项目链接/仓库地址/获奖情况} % Date
-    {}
-  \vspace{-5mm}
-  \cventry
-    {你的主要作用或角色} % Role
-    {项目名称二} % Project Name
-    {项目简介或技术关键词} % Location
-    {项目链接/仓库地址/获奖情况} % Date
-    {}
-  \vspace{-5mm}
-  \cventry
-    {你的主要作用或角色} % Role
-    {项目名称三} % Project Name
-    {项目简介或技术关键词} % Location
-    {项目链接/仓库地址/获奖情况} % Date
-    {}
-  \vspace{-5mm}
-  \cventry
-    {你的主要作用或角色} % Role
-    {项目名称四} % Project Name
-    {项目简介或技术关键词} % Location
-    {项目链接/仓库地址/获奖情况} % Date
-    {}
-  \vspace{-5mm}
-  \cventry
-    {你的主要作用或角色} % Role
-    {项目名称五} % Project Name
-    {项目简介或技术关键词>} % Location
-    {项目链接/仓库地址/获奖情况} % Date
-    {}
-
-\end{cventries}
-
-\vspace{-8mm}
-
-% --- [荣誉奖项] ---
-\cvsection{\textcolor{awesome}{荣誉}奖项}
-\begin{cvhonors}
-  \cvhonor
-    {奖项或竞赛名称一，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-
-  \cvhonor
-    {奖项或竞赛名称二，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-
-  \cvhonor
-    {奖项或竞赛名称三，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-
-  \cvhonor
-    {奖项或竞赛名称四，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-
-  \cvhonor
-    {奖项或竞赛名称五，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-  \cvhonor
-    {奖项或竞赛名称六，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-  \cvhonor
-    {奖项或竞赛名称七，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-  \cvhonor
-    {奖项或竞赛名称八，} % Event
-    {奖项等级} % Award
-    {奖项级别} % Location
-    {年份} % Date
-  
-\end{cvhonors}
+\input{sections/education}
+\input{sections/skills}
+\input{sections/projects}
+\input{sections/honors}
 
 
 \end{document}
