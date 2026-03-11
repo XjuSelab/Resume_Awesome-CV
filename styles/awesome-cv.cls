@@ -37,8 +37,20 @@
 \RequirePackage[quiet]{fontspec} % 字体管理
 \defaultfontfeatures{Ligatures=TeX}
 \RequirePackage{unicode-math}% 数学字体
-\RequirePackage{fontawesome} % 图标库
-\RequirePackage[default,opentype]{sourcesanspro} % 英文字体
+\newif\ifacvfontawesomeavailable
+\IfFileExists{fontawesome.sty}{%
+  \RequirePackage{fontawesome} % 图标库
+  \acvfontawesomeavailabletrue
+}{%
+  \acvfontawesomeavailablefalse
+}
+\newif\ifacvsourcesansavailable
+\IfFileExists{sourcesanspro.sty}{%
+  \RequirePackage[default,opentype]{sourcesanspro} % 英文字体
+  \acvsourcesansavailabletrue
+}{%
+  \acvsourcesansavailablefalse
+}
 \RequirePackage[skins]{tcolorbox} % 绘图框
 \RequirePackage[hidelinks,unicode]{hyperref} % 超链接
 
@@ -53,7 +65,7 @@
 %-------------------------------------------------------------------------------
 %                配置部分
 %-------------------------------------------------------------------------------
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\newcommand*{\fontdir}[1][styles/fonts/]{\def\@fontdir{#1}}
 \fontdir
 
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
@@ -96,6 +108,7 @@
 %-------------------------------------------------------------------------------
 \newfontfamily\headerfont[
   Path=\@fontdir,
+  Extension=.ttf,
   UprightFont=*-Regular,
   ItalicFont=*-Italic,
   BoldFont=*-Bold,
@@ -104,15 +117,39 @@
 
 \newfontfamily\headerfontlight[
   Path=\@fontdir,
+  Extension=.ttf,
   UprightFont=*-Thin,
   ItalicFont=*-ThinItalic,
   BoldFont=*-Medium,
   BoldItalicFont=*-MediumItalic,
 ]{Roboto}
 
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+\ifacvsourcesansavailable
+  \newcommand*{\footerfont}{\sourcesanspro}
+  \newcommand*{\bodyfont}{\sourcesanspro}
+  \newcommand*{\bodyfontlight}{\sourcesansprolight}
+\else
+  \newcommand*{\footerfont}{\headerfont}
+  \newcommand*{\bodyfont}{\headerfont}
+  \newcommand*{\bodyfontlight}{\headerfontlight}
+\fi
+
+\ifacvfontawesomeavailable\else
+  % Fall back to short ASCII labels when the TeX fontawesome package is unavailable.
+  \newcommand*{\faMobile}{M}
+  \newcommand*{\faEnvelope}{@}
+  \newcommand*{\faHome}{H}
+  \newcommand*{\faGithubSquare}{GH}
+  \newcommand*{\faGitlab}{GL}
+  \newcommand*{\faStackOverflow}{SO}
+  \newcommand*{\faLinkedinSquare}{IN}
+  \newcommand*{\faTwitter}{X}
+  \newcommand*{\faSkype}{SK}
+  \newcommand*{\faReddit}{R}
+  \newcommand*{\faXingSquare}{XI}
+  \newcommand*{\faMedium}{M}
+  \newcommand*{\faGraduationCap}{GS}
+\fi
 
 % 样式定义
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{28pt}{1em}\headerfont\bfseries\color{text} #1}}
