@@ -64,6 +64,7 @@
   \newfontfamily\projectrolefont{TeX Gyre Termes}%
 }
 \newcommand*{\projectrolestyle}[1]{{\fontsize{12pt}{17pt}\projectrolefont\color{graytext}{#1}}}
+\newcommand*{\projectdatestyle}[1]{{\entrydatestyle{\detokenize{#1}}}}
 
 \renewcommand*{\sectionstyle}[1]{%
   {\fontsize{18pt}{22pt}\bodyfont\bfseries #1}%
@@ -85,7 +86,7 @@
   \setlength\tabcolsep{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 7cm} R{7cm}}
     \entrytitlestyle{#1} & \entrylocationstyle{#3} \\[-0.5mm]
-    \projectrolestyle{#2} & \entrydatestyle{#4} \\[0mm]
+    \projectrolestyle{#2} & \projectdatestyle{#4} \\[0mm]
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{}}%
   \end{tabular*}
   \vspace{-2mm}
