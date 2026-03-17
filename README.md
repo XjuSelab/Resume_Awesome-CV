@@ -10,6 +10,12 @@
 2. 再把你自己的 Fork 仓库导入 Overleaf。
 3. 最后在 Overleaf 中直接修改内容并导出 PDF。
 
+## 最终效果预览
+
+下面这张图是本项目生成的简历最终效果预览：
+
+![Resume Preview](docs/resume_preview.jpg)
+
 ## 1. 先 Fork 本项目
 
 进入本仓库页面后，先点击右上角 `Fork`，把项目复制到你自己的 GitHub 账号下。
