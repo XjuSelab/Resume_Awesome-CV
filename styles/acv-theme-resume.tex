@@ -58,6 +58,12 @@
 \renewcommand*{\descriptionstyle}[1]{{\fontsize{12pt}{18pt}\bodyfontlight\color{text}{#1}}}
 \renewcommand*{\skilltypestyle}[1]{{\fontsize{12pt}{18pt}\bodyfont\bfseries\color{darktext}{#1}}}
 \renewcommand*{\skillsetstyle}[1]{{\fontsize{12pt}{18pt}\bodyfontlight\color{text}{#1}}}
+\IfFontExistsTF{Times New Roman}{%
+  \newfontfamily\projectrolefont{Times New Roman}%
+}{%
+  \newfontfamily\projectrolefont{TeX Gyre Termes}%
+}
+\newcommand*{\projectrolestyle}[1]{{\fontsize{12pt}{17pt}\projectrolefont\color{graytext}{#1}}}
 
 \renewcommand*{\sectionstyle}[1]{%
   {\fontsize{18pt}{22pt}\bodyfont\bfseries #1}%
@@ -70,6 +76,17 @@
     \entrytitlestyle{#2} & \entrylocationstyle{#3} \\[-0.5mm]
     \entrypositionstyle{#1} & \entrydatestyle{#4} \\[0mm]
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}
+  \vspace{-2mm}
+}
+
+\newcommand*{\cvproject}[4]{%
+  \vspace{1mm}
+  \setlength\tabcolsep{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 7cm} R{7cm}}
+    \projectrolestyle{#1} & \entrylocationstyle{#3} \\[-0.5mm]
+    \entrytitlestyle{#2} & \entrydatestyle{#4} \\[0mm]
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{}}%
   \end{tabular*}
   \vspace{-2mm}
 }
